@@ -16,7 +16,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    double v[],b[];
+    double v[],b[],c[];
     public Principal() {
         initComponents();
     }
@@ -190,6 +190,7 @@ public class Principal extends javax.swing.JFrame {
             longitud=Integer.parseInt(txtLongitud.getText().trim());
             v=new double[longitud];
             b=new double [longitud];
+            c=new double [longitud];
             JOptionPane.showMessageDialog(this, "Vectores Creados Exitosamente");
         }
     }//GEN-LAST:event_cmbCrearActionPerformed
@@ -213,6 +214,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbManual2ActionPerformed
 
     private void cmbMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMostrarActionPerformed
+        int op;
+        op=cmbOperacion.getSelectedIndex();
         for (int i = 0; i < v.length; i++) {
             if  (b[i]==0){
             JOptionPane.showMessageDialog(this, "Llene El Vector B", "Error", JOptionPane.ERROR_MESSAGE);
@@ -223,8 +226,22 @@ public class Principal extends javax.swing.JFrame {
             break;
             } 
         }
-        
-        
+        switch (op){
+            case 0:
+                for (int i = 0; i < v.length; i++) {
+                      c[i]= v[i]+b[i];
+                }
+                for (int i = 0; i < v.length; i++) {
+                    txtResultado.append("Vector C["+i+"] = "+c[i]+" \n ");}
+                break;
+            case 1:
+                for (int i = 0; i < v.length; i++) {
+                      c[i]= v[i]-b[i];
+                }
+                for (int i = 0; i < v.length; i++) {
+                    txtResultado.append("Vector C["+i+"] = "+c[i]+" \n ");}
+                break;
+        }
         
     }//GEN-LAST:event_cmbMostrarActionPerformed
 
