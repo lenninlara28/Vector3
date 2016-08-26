@@ -103,6 +103,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbAutomatico.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbAutomatico.setText("Llenar Automatico A");
+        cmbAutomatico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbAutomaticoActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbAutomatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         cmbMostrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -133,6 +138,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbAutomatico2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbAutomatico2.setText("Llenar Automatico B");
+        cmbAutomatico2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbAutomatico2ActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbAutomatico2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 320, 260));
@@ -213,7 +223,32 @@ public class Principal extends javax.swing.JFrame {
             break;
             } 
         }
+        
+        
+        
     }//GEN-LAST:event_cmbMostrarActionPerformed
+
+    private void cmbAutomaticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAutomaticoActionPerformed
+       double n;
+        for (int i = 0; i < v.length; i++) {
+         n= (int) (Math.random()*50+1);
+            v[i]=n;}
+        for (int i = 0; i < v.length; i++) {
+                    txtResultado.append(v[i]+" \n ");
+                }
+        JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+    }//GEN-LAST:event_cmbAutomaticoActionPerformed
+
+    private void cmbAutomatico2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAutomatico2ActionPerformed
+       double n;
+        for (int i = 0; i < b.length; i++) {
+         n= (int) (Math.random()*50+1);
+            b[i]=n;}
+        for (int i = 0; i < b.length; i++) {
+                    txtResultado.append(b[i]+" \n ");
+                }
+        JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+    }//GEN-LAST:event_cmbAutomatico2ActionPerformed
 
     /**
      * @param args the command line arguments
