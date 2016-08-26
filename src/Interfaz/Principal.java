@@ -121,6 +121,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbBorrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbBorrar.setText("Borrar");
+        cmbBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbBorrarActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
 
         cmbOperacion.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -148,7 +153,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 320, 260));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Suma De Vectores");
+        jLabel1.setText("Vectores Resultantes");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -266,6 +271,15 @@ public class Principal extends javax.swing.JFrame {
                 }
         JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
     }//GEN-LAST:event_cmbAutomatico2ActionPerformed
+
+    private void cmbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBorrarActionPerformed
+        txtLongitud.setText("");
+        txtResultado.setText("");
+        v=null;
+        b=null;
+        c=null;
+        txtLongitud.requestFocusInWindow();        
+    }//GEN-LAST:event_cmbBorrarActionPerformed
 
     /**
      * @param args the command line arguments
