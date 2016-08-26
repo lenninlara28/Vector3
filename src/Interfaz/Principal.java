@@ -16,7 +16,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    double v[];
+    double v[],b[];
     public Principal() {
         initComponents();
     }
@@ -94,6 +94,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbManual.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbManual.setText("Llenar Manual A");
+        cmbManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbManualActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         cmbAutomatico.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -102,6 +107,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbMostrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbMostrar.setText("Mostrar");
+        cmbMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMostrarActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
         cmbBorrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -114,6 +124,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbManual2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbManual2.setText("Llenar Manual B");
+        cmbManual2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbManual2ActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbManual2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
 
         cmbAutomatico2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -164,9 +179,41 @@ public class Principal extends javax.swing.JFrame {
         else{
             longitud=Integer.parseInt(txtLongitud.getText().trim());
             v=new double[longitud];
-            JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+            b=new double [longitud];
+            JOptionPane.showMessageDialog(this, "Vectores Creados Exitosamente");
         }
     }//GEN-LAST:event_cmbCrearActionPerformed
+
+    private void cmbManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbManualActionPerformed
+        double n;
+        for (int i=0;i<v.length;i++){
+            n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el Elemento EN La Posicion "+i));
+            v[i]=n;
+        }
+        JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+    }//GEN-LAST:event_cmbManualActionPerformed
+
+    private void cmbManual2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbManual2ActionPerformed
+        double n;
+        for (int i=0;i<b.length;i++){
+            n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el Elemento EN La Posicion "+i));
+            b[i]=n;
+        }
+        JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+    }//GEN-LAST:event_cmbManual2ActionPerformed
+
+    private void cmbMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMostrarActionPerformed
+        for (int i = 0; i < v.length; i++) {
+            if  (b[i]==0){
+            JOptionPane.showMessageDialog(this, "Llene El Vector B", "Error", JOptionPane.ERROR_MESSAGE);
+            break;
+            }
+            else if(v[i]==0){
+            JOptionPane.showMessageDialog(this, "Llene El Vector A", "Error", JOptionPane.ERROR_MESSAGE);
+            break;
+            } 
+        }
+    }//GEN-LAST:event_cmbMostrarActionPerformed
 
     /**
      * @param args the command line arguments
